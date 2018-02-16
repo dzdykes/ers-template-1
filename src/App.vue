@@ -1,18 +1,26 @@
 <template>
   <v-app>
-    <admin-nav v-if="isAdmin"></admin-nav>
+    <admin-nav v-if="isAdmin" :mini-variant.sync="$vuetify.breakpoint.smAndDown"></admin-nav>
     <customer-nav v-else></customer-nav>
-    <v-content>
-      <router-view/>
-    </v-content>
-    <admin-footer v-if="isAdmin"></admin-footer>
-    <customer-footer v-else></customer-footer>
-    <v-btn color="blue-grey" @click="isAdmin = !isAdmin" dark large fixed bottom right fab>
-      <v-tooltip left>
-        <v-icon slot="activator">autorenew</v-icon>
-        <span>Switch between Admin and Customer view</span>
-      </v-tooltip>
-    </v-btn>
+    <section>
+      <v-parallax :src="require('@/assets/parallax-3.jpg')" height="750"></v-parallax>
+      <v-parallax :src="require('@/assets/parallax-1.jpg')" height="1000"></v-parallax>
+      <v-parallax :src="require('@/assets/parallax-2.jpg')" height="1000"></v-parallax>
+    </section>
+
+    <v-container>
+      <div class="page-container">
+        <router-view/>
+      </div>
+      <customer-footer></customer-footer>
+
+      <v-btn color="blue-grey" @click="isAdmin = !isAdmin" dark large fixed bottom right fab>
+        <v-tooltip left>
+          <v-icon slot="activator">autorenew</v-icon>
+          <span>Switch between Admin and Customer view</span>
+        </v-tooltip>
+      </v-btn>
+    </v-container>
   </v-app>
 </template>
 
@@ -37,3 +45,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+.page-container {
+  position: absolute;
+  left:0;
+  right:0;
+  top:63px;
+  bottom:0;
+}
+</style>

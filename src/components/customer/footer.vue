@@ -1,7 +1,7 @@
 <template>
-  <v-footer fixed app>
-    <span>&copy; 2017</span>
-  </v-footer>
+  <footer class="text-xs-center">
+    <div>&copy; 2018 esr template</div>
+  </footer>
 </template>
 
 <script>
@@ -10,6 +10,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 1.5rem;
+  color: rgba(0,0,0,.2);
+  -webkit-text-stroke: .015rem white;
+  text-align: center;
+  width:100%;
+}
 </style>
