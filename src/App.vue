@@ -12,15 +12,15 @@
       <div class="page-container">
         <router-view/>
       </div>
-      <customer-footer></customer-footer>
-
       <v-btn color="blue-grey" @click="isAdmin = !isAdmin" dark large fixed bottom right fab>
         <v-tooltip left>
           <v-icon slot="activator">autorenew</v-icon>
           <span>Switch between Admin and Customer view</span>
+          <v-spacer></v-spacer>
         </v-tooltip>
       </v-btn>
     </v-container>
+    <customer-footer></customer-footer>
   </v-app>
 </template>
 
