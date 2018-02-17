@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 footer {
   position: fixed;
   bottom: 0;

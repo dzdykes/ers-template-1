@@ -41,8 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="stylus" scoped>
 .contact-form {
   background-color: rgba(0,0,0,.8);
   width: 100%;

@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 .toolbar {
   background: rgba(55,71,79,.6)
 }

@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 .toolbar {
   z-index: 5;
   background: rgba(55,71,79,1);
