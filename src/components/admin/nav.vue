@@ -46,7 +46,7 @@ export default {
       }],
       right: true,
       rightDrawer: false,
-      title: 'Farm Fresh Beer'
+      title: 'Farm Fresh Beer - Admin'
     }
   }
 }

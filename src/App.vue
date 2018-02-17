@@ -5,8 +5,8 @@
     <section>
       <v-parallax :src="require('@/assets/backgrounds/parallax-3.jpg')" height="750"></v-parallax>
       <v-parallax class="hidden-sm-and-down" :src="require('@/assets/backgrounds/parallax-1.jpg')" height="1000"></v-parallax>
-      <v-parallax class="hidden-sm-and-up" :src="require('@/assets/backgrounds/parallax-1.jpg')" height="1200"></v-parallax>
-      <v-parallax :src="require('@/assets/backgrounds/parallax-2.jpg')" height="1150"></v-parallax>
+      <v-parallax class="hidden-md-and-up" :src="require('@/assets/backgrounds/parallax-1.jpg')" height="1400"></v-parallax>
+      <v-parallax :src="require('@/assets/backgrounds/parallax-2.jpg')" height="1100"></v-parallax>
     </section>
     <div class="page-container">
       <router-view/>

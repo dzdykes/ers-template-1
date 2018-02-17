@@ -1,26 +1,34 @@
 <template>
   <section>
     <v-card class="transparent" height="686px">
-      <v-layout column fill-height>
-        <v-flex class="text-xs-center center-title">
-          <h1 class="display-2">Farm Fresh Beer</h1>
-          <h1>You could have this website for your restaurant</h1>
+      <v-layout column fill-height align-center justify-center>
+        <div class="text-xs-center">
+          <h1 class="display-4 mb-3"><span>Farm Fresh Beer</span></h1>
+          <blockquote>Mission statement here. Wouldn't it be nice to have a custom webite that is tailor fitted for your business</blockquote>
           <v-dialog v-model="contactFormDialog" max-width="490" :fullscreen="$vuetify.breakpoint.xs" @keyup.esc="contactFormDialog=false">
-            <v-btn slot="activator" class="mt-5 blue-grey darken-3 white--text btn--oversized" large>
+            <v-btn slot="activator" class="mt-3 blue-grey darken-3 white--text elevation-24" large>
               Contact Us
             </v-btn>
             <contact-form @close="contactFormDialog=false" :is-dialog="true"></contact-form>
           </v-dialog>
-        </v-flex>
+        </div>
       </v-layout>
     </v-card>
-    <v-card flat class="transparent" :height="$vuetify.breakpoint.smAndUp ? '1000px' : '1200px'">
+    <v-card flat class="transparent">
       <v-container fill-height v-bind="{ [`grid-list-xl`]: true }" :fluid="$vuetify.breakpoint.smAndUp">
-        <v-layout fill-height row wrap>
+        <v-layout row wrap>
           <v-flex xs12 order-sm3 sm6 offset-lg2 lg4>
             <v-layout column align-center justify-center>
-              <div class="display-1 white--text">Large Beer Selection!</div>
-              <h1 class="ml-3 white--text">Try one our one million beers on tap or order a bottle or a can.</h1>
+              <div class="text-xs-center py-5">
+                <div class="display-1 white--text">Live Events!</div>
+                <h2 class="ml-3 white--text">See who's coming to Farm Fresh Beer</h2>
+                <v-btn large class="elevation-24">
+                  <v-icon left>
+                    people_outline
+                  </v-icon>
+                  Events
+                </v-btn>
+              </div>
             </v-layout>
           </v-flex>
           <v-flex xs12 order-sm1 sm6 offset-lg2 lg4>
@@ -30,8 +38,27 @@
           </v-flex>
           <v-flex xs12 order-sm2 sm6 lg4>
             <v-layout column align-center justify-center>
-              <div class="display-1 white--text">Great Food!</div>
-              <h1 class="ml-3 white--text">Come to our restaurant and try some food.</h1>
+              <div class="text-xs-center py-5">
+                <div class="display-1 white--text">Great Food!</div>
+                <h1 class="px-3 text-xs-center ml-3 white--text">Come to our restaurant and try some food and massive beer selection.</h1>
+                <v-menu open-on-hover bottom offset-y>
+                  <v-btn dark class="blue-grey" large slot="activator">See Our Menu</v-btn>
+                  <v-list class="blue-grey lighten-4">
+                    <v-list-tile>
+                      <div>
+                        <v-tooltip v-for="link in menuLinks" :key="link.id" bottom>                        
+                          <v-btn slot="activator" icon>
+                            <v-icon>
+                              {{link.icon}}
+                            </v-icon>
+                          </v-btn>
+                          <span>{{link.tooltip}}</span>
+                        </v-tooltip>
+                      </div>
+                    </v-list-tile>
+                  </v-list>
+                </v-menu>
+              </div>
             </v-layout>
           </v-flex>
           <v-flex xs12 order-sm4 sm6 lg4>
@@ -67,7 +94,27 @@ export default {
   data () {
     return {
       size: 'xl',
-      contactFormDialog: false
+      contactFormDialog: false,
+      menuLinks: [
+        {
+          id: 'bar-menu-link',
+          icon: 'local_bar',
+          tooltip: 'Craft Beer and Drink Menu',
+          src: 'clem-onojeghuo-222414.jpg'
+        },
+        {
+          id: 'food-menu-link',
+          icon: 'local_dining',
+          tooltip: 'Local Farm Food Menu',
+          src: 'seth-weisfel-510833.jpg'
+        },
+        {
+          id: 'catering-menu-link',
+          icon: 'room_service',
+          tooltip: 'Custom Catering Menu',
+          src: 'james-sutton-198871.jpg'
+        }
+      ]
     }
   },
   components: {
@@ -76,17 +123,17 @@ export default {
 }
 </script>
 
-<style scoped>
-.center-title {
-  margin-top:15rem;
-}
+<style lang="stylus" scoped>
 h1 {
-  color: rgba(255,255,255,.9);
-  text-shadow: .1rem .1rem .2rem rgba(0,0,0,.9);
+  text-shadow: .4rem .6rem 1rem rgba(255,255,255,.9);
 }
-h4 {
-  color: rgba(255,255,255,.7);
+blockquote {
+  max-width: 350px;
+  margin:auto;
+  padding:1rem 1.5rem;
+  color: rgba(255,255,200,.7);
   text-shadow: .1rem .1rem .2rem rgba(0,0,0,.9);
+  background: rgba(0,0,0,.4);
 }
 .btn.btn--large.btn--oversized {
   width:250px;
