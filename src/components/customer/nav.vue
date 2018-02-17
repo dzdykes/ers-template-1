@@ -42,7 +42,6 @@
             </v-list-tile>
           </v-list>
         </v-menu>
-
       </v-toolbar-items>
     </v-toolbar>
   </section>
