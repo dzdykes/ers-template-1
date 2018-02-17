@@ -80,7 +80,7 @@ export default {
 
 <style lang="stylus" scoped>
 .toolbar {
-  background: rgba(55,71,79,.6)
+  background: rgba(55,71,79,.6) !important;
 }
 .btn--block {
   height: 100%;

@@ -43,7 +43,7 @@ export default {
 
 <style lang="stylus" scoped>
 .contact-form {
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.8) !important;
   width: 100%;
 }
 </style>
