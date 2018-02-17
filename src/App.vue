@@ -3,9 +3,10 @@
     <admin-nav v-if="isAdmin" :mini-variant.sync="$vuetify.breakpoint.smAndDown"></admin-nav>
     <customer-nav v-else></customer-nav>
     <section>
-      <v-parallax :src="require('@/assets/parallax-3.jpg')" height="750"></v-parallax>
-      <v-parallax :src="require('@/assets/parallax-1.jpg')" height="1000"></v-parallax>
-      <v-parallax :src="require('@/assets/parallax-2.jpg')" height="1000"></v-parallax>
+      <v-parallax :src="require('@/assets/backgrounds/parallax-3.jpg')" height="750"></v-parallax>
+      <v-parallax class="hidden-sm-and-down" :src="require('@/assets/backgrounds/parallax-1.jpg')" height="1000"></v-parallax>
+      <v-parallax class="hidden-sm-and-up" :src="require('@/assets/backgrounds/parallax-1.jpg')" height="2000"></v-parallax>
+      <v-parallax :src="require('@/assets/backgrounds/parallax-2.jpg')" height="1000"></v-parallax>
     </section>
 
     <v-container>
