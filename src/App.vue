@@ -43,12 +43,13 @@ export default {
   }
 }
 </script>
-<style scoped>
-.page-container {
-  position: absolute;
-  left:0;
-  right:0;
-  top:63px;
-  bottom:0;
+<style lang="stylus">
+  @import './assets/stylus/main'
+  .page-container {
+    position: absolute;
+    left:0;
+    right:0;
+    top:63px;
+    bottom:0;
 }
 </style>
