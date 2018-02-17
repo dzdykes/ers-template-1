@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-toolbar app>
+    <v-toolbar app ref="customerToolbar" :style="adminOn ? `top:${$refs.customerToolbar.computedHeight}px`: ''">
       <v-toolbar-title class="white--text" v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -25,7 +25,7 @@
           </v-flex>
           <v-flex xs3>
             <v-btn flat block dark class="px-3">
-              Contact
+              Events
               <div class="nav-slider"></div>
             </v-btn>
           </v-flex>
@@ -50,6 +50,7 @@
 <script>
 export default {
   props: {
+    adminOn: Boolean
   },
   name: 'CustomerNav',
   data () {
@@ -102,5 +103,8 @@ export default {
 }
 .btn.active > .btn__content > .nav-slider {
   display: block;
+}
+.push-down {
+  top: 64px;
 }
 </style>
