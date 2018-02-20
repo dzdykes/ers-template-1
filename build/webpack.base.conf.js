@@ -71,6 +71,7 @@ module.exports = {
               webp: {
                 quality: 75
               },
+              limit: 10000,
               name: utils.assetsPath('img/[name].[hash:7].[ext]')
             }
           }
