@@ -1,18 +1,32 @@
 <template>
   <section>
-    <v-card class="transparent" height="686px">
-      <v-layout column fill-height align-center justify-center>
+    <v-card class="transparent">
+      <v-parallax :src="require('@/assets/backgrounds/parallax-2.jpg')">
+        <v-layout column align-center justify-center>
+          <div class="text-xs-center">
+            <h1 class="display-4 mb-3"><span>Farm Fresh Beer</span></h1>
+            <blockquote>Mission statement here. Wouldn't it be nice to have a custom webite that is tailor fitted for your business</blockquote>
+            <v-dialog v-model="contactFormDialog" max-width="490" :fullscreen="$vuetify.breakpoint.xs" @keyup.esc="contactFormDialog=false">
+              <v-btn slot="activator" class="mt-3 primary white--text elevation-24" large>
+                Contact Us
+              </v-btn>
+              <contact-form @close="contactFormDialog=false" :is-dialog="true"></contact-form>
+            </v-dialog>
+          </div>
+        </v-layout>
+      </v-parallax>
+      <!-- <v-layout column fill-height align-center justify-center>
         <div class="text-xs-center">
           <h1 class="display-4 mb-3"><span>Farm Fresh Beer</span></h1>
           <blockquote>Mission statement here. Wouldn't it be nice to have a custom webite that is tailor fitted for your business</blockquote>
           <v-dialog v-model="contactFormDialog" max-width="490" :fullscreen="$vuetify.breakpoint.xs" @keyup.esc="contactFormDialog=false">
-            <v-btn slot="activator" class="mt-3 blue-grey darken-3 white--text elevation-24" large>
+            <v-btn slot="activator" class="mt-3 primary white--text elevation-24" large>
               Contact Us
             </v-btn>
             <contact-form @close="contactFormDialog=false" :is-dialog="true"></contact-form>
           </v-dialog>
         </div>
-      </v-layout>
+      </v-layout> -->
     </v-card>
     <v-card flat class="transparent">
       <v-container fill-height v-bind="{ [`grid-list-xl`]: true }" :fluid="$vuetify.breakpoint.smAndUp">

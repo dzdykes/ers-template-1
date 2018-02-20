@@ -1,5 +1,5 @@
 <template>
-  <v-card class="contact-form" @keyup.esc="$emit('close')">
+  <v-card class="contact-form accent" @keyup.esc="$emit('close')">
     <v-card-title class="pb-0">
       <div class="headline white--text">Send us feedback.</div>
       <v-spacer></v-spacer>
@@ -43,7 +43,6 @@ export default {
 
 <style lang="stylus" scoped>
 .contact-form {
-  background-color: rgba(0,0,0,.8) !important;
   width: 100%;
 }
 </style>
