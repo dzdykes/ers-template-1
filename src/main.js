@@ -4,9 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
+import colors from 'vuetify/es5/util/colors'
+import 'vuetify/dist/vuetify.min.css'
 import 'vuetify/dist/vuetify.min.css'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  theme: {
+    primary: colors.blueGrey.darken3,
+    secondary: colors.lightBlue.lighten4,
+    accent: colors.amber.accent4
+  }
+})
 
 Vue.config.productionTip = false
 

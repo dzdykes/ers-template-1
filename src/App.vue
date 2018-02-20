@@ -2,15 +2,15 @@
   <v-app>
     <admin-nav v-if="isAdmin" :mini-variant.sync="$vuetify.breakpoint.smAndDown"></admin-nav>
     <customer-nav :admin-on.sync="isAdmin"></customer-nav>
-    <section>
+    <section v-if="isParalax">
       <v-parallax :src="require('@/assets/backgrounds/parallax-3.jpg')" height="750"></v-parallax>
       <v-parallax class="hidden-sm-and-down" :src="require('@/assets/backgrounds/parallax-1.jpg')" height="1000"></v-parallax>
       <v-parallax class="hidden-md-and-up" :src="require('@/assets/backgrounds/parallax-1.jpg')" height="1400"></v-parallax>
       <v-parallax :src="require('@/assets/backgrounds/parallax-2.jpg')" height="1100"></v-parallax>
     </section>
-    <div class="page-container">
+    <v-container fluid class="page-container accent pa-0">
       <router-view/>
-    </div>
+    </v-container>
     <v-btn color="blue-grey" @click="isAdmin = !isAdmin" dark large fixed bottom right fab>
       <v-tooltip left>
         <v-icon slot="activator">autorenew</v-icon>
@@ -31,7 +31,8 @@ import CustomerFooter from '@/components/customer/footer'
 export default {
   data () {
     return {
-      isAdmin: false
+      isAdmin: false,
+      isParalax: false
     }
   },
   name: 'App',
@@ -51,5 +52,9 @@ export default {
     right:0;
     top:63px;
     bottom:0;
+}
+
+.parallax__content {
+  padding: 0 !important;
 }
 </style>

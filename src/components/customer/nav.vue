@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-toolbar app ref="customerToolbar" :style="adminOn ? `top:${$refs.customerToolbar.computedHeight}px`: ''">
+    <v-toolbar class="primary elevation-20" app ref="customerToolbar" :style="adminOn ? `top:${$refs.customerToolbar.computedHeight}px`: ''">
       <v-toolbar-title class="white--text" v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -80,7 +80,6 @@ export default {
 
 <style lang="stylus" scoped>
 .toolbar {
-  background: rgba(55,71,79,.6) !important;
 }
 .btn--block {
   height: 100% !important;
