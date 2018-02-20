@@ -70,7 +70,8 @@ module.exports = {
               // the webp option will enable WEBP
               webp: {
                 quality: 75
-              }
+              },
+              name: utils.assetsPath('img/[name].[hash:7].[ext]')
             }
           }
         ]
